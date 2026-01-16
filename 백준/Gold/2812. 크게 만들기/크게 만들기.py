@@ -1,12 +1,11 @@
 a,b=map(int,input().split())
 s=input().strip()
 stack=[]
-k=b
-for ch in s:
-    while stack and stack[-1]<ch and k>0:
+for i in s:
+    while b>0 and stack and stack[-1]<i:
         stack.pop()
-        k-=1
-    stack.append(ch)
-if k>0:
-    stack=stack[:-k]
+        b-=1
+    stack.append(i)
+if b>0:
+    stack=stack[:-b]
 print(''.join(stack))
