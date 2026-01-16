@@ -6,6 +6,6 @@ def solution(clothes):
         else:
             d[b]+=1
     ans=1
-    for i in d:
-        ans*=(d[i]+1)
+    for i in d.values():
+        ans*=i+1
     return ans-1
