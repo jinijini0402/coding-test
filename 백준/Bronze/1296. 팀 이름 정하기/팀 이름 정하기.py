@@ -1,10 +1,12 @@
-Y=input()
+s=input().strip()
 n=int(input())
-d=[input() for _ in range(n)]
+d=[input().strip() for _ in range (n)]
 d.sort()
 ans=[]
-L,O,V,E=Y.count('L'),Y.count('O'),Y.count('V'),Y.count('E')
 for i in d:
-    Lt,Ot,Vt,Et=L+i.count('L'),O+i.count('O'),V+i.count('V'),E+i.count('E')
-    ans.append(((Lt+Ot)*(Lt+Vt)*(Lt+Et)*(Ot+Vt)*(Ot+Et)*(Vt+Et))%100)
+    L=s.count('L')+i.count('L')
+    O=s.count('O')+i.count('O')
+    V=s.count('V')+i.count('V')
+    E=s.count('E')+i.count('E')
+    ans.append(((L+O)*(L+V)*(L+E)*(O+V)*(O+E)*(V+E))%100)
 print(d[ans.index(max(ans))])
